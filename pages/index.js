@@ -6,6 +6,7 @@ import { useRef, useState } from "react";
 import CoinbaseWalletSDK from "@coinbase/wallet-sdk";
 import { Box } from "@mui/system";
 import { AccountBalanceWallet } from "@mui/icons-material"
+import Image from 'next/image'
 
 import usdcABI from "../helpers/usdcABI.json";
 import Container from "../components/container";
@@ -174,10 +175,14 @@ export default function Home() {
       {!!address && (
         <div className="mt-4 flex justify-between">
           <div className="flex items-center balance-card l-card rounded-r-full">
-            <img
-              src="/usd-coin-usdc-logo.svg"
-              className="w-4 h-4 rounded-full ring-1 mr-2"
-            />
+            <div  className="w-4 h-4 rounded-full ring-1 mr-2">
+              <div style={{width: '100%', height: '100%', position: 'relative'}}>
+                <Image      
+                  layout="fill"
+                  src="/usd-coin-usdc-logo.svg"
+                />
+              </div>
+            </div>
             <span>
               {balances.usdc} <strong>USDC</strong>
             </span>
@@ -187,10 +192,14 @@ export default function Home() {
             <span>
               {balances.eth} <strong>ETH</strong>
             </span>
-            <img
-              src="/ethereum-eth-logo.svg"
-              className="w-4 h-4 rounded-full ring-1 ml-2"
-            />
+            <div  className="w-4 h-4 rounded-full ring-1 ml-2">
+              <div style={{width: '100%', height: '100%', position: 'relative'}}>
+                <Image
+                  layout = "fill"
+                  src="/ethereum-eth-logo.svg"
+                />
+              </div>
+            </div>
           </div>
         </div>
       )}
